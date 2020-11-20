@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  devtools:
+    container_name: devtools
+    hostname: devtools
+    image: ghcr.io/crhowell/codeplatoon/devtools:latest
+    command: "tail -f /dev/null"
+    networks:
+      - cp_net
+    ports:
+      - "3000:3000"
+      - "5990-5999:5990-5999"
+      - "8000:8000"
+    volumes:
+      - "../challenges:/challenges"      
+      - "../home/dev:/home/dev"
+    environment:
+      - PGHOST=postgres
+      - PGPASSFILE=/home/db/dev/.pgpass
+
+  db:
+    container_name: postgres
+    image: postgres
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+    ports:
+      - "5432"
+    networks:
+      - cp_net
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+networks:
+  cp_net:
+    driver: bridge

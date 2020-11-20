@@ -1,0 +1,68 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.134.0/containers/python-3
+{
+	"name": "CodePlatoon Devtools",
+	"dockerComposeFile": "docker-compose.yml",
+	"runServices": ["db", "devtools"],
+	"service": "devtools",
+	"workspaceFolder": "/challenges",
+	"shutdownAction": "stopCompose",
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"editor.fontSize": 14,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderLineHighlight": "gutter",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "onFocusChange",
+    "files.eol": "\n",
+    "window.zoomLevel": 2,
+    "workbench.colorTheme": "Visual Studio Dark",
+		"workbench.startupEditor": "newUntitledFile",
+		"editor.suggestSelection": "first",
+		"python.languageServer": "Pylance",
+		
+    "[python]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 4,
+			"editor.detectIndentation": false,
+			"editor.rulers": [72, 79]
+		},
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"terminal.integrated.shellArgs.linux": ["-l"],
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.linting.enabled": true,
+		"python.linting.flake8Enabled": true,
+		"python.formatting.provider": "autopep8",
+		"python.formatting.autopep8Path": "~/.local/bin/autopep8",
+		// "python.formatting.blackPath": "~/.local/bin/black",
+		// "python.formatting.yapfPath": "~/.local/bin/yapf",
+		// "python.linting.banditPath": "~/.local/bin/bandit",
+		"python.linting.flake8Path": "~/.local/bin/flake8"
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"hookyqr.beautify",
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"vscode-icons-team.vscode-icons",
+		// "christian-kohler.path-intellisense",
+		// "searking.preview-vscode",
+		// "hasanali.gitignore-templates",
+		// "batisteo.vscode-django",
+		// "wholroyd.jinja",
+		// "coenraads.bracket-pair-colorizer",
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [3000, 8000],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "pip3 install -r requirements.txt",
+
+	// Comment out to connect as root instead.
+	"remoteUser": "dev"
+}
