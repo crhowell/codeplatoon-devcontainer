@@ -6,7 +6,6 @@
 	"runServices": ["db", "devtools"],
 	"service": "devtools",
 	"containerUser": "dev",
-	"initializeCommand": "mkdir -p challenges home/dev",
 	"workspaceFolder": "/challenges",
 	"shutdownAction": "stopCompose",
 	// Set *default* container specific settings.json values on container create.
@@ -51,6 +50,7 @@
 		"ms-python.python",
 		"ms-python.vscode-pylance",
 		"vscode-icons-team.vscode-icons",
+		// We can add more defaults to install here...
 		// "christian-kohler.path-intellisense",
 		// "searking.preview-vscode",
 		// "hasanali.gitignore-templates",
