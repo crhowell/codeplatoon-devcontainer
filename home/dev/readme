@@ -1,0 +1,9 @@
+home/dev folder
+-----------------
+This folder will be your devtools container user $HOME directory. This doesn't not override or replace your HOST machine. We are keeping the container isolated from your machine so there is no conflicts or overwriting happening.
+
+It will contain/persist back to your host machine user specific config files for your container user for things like:
++ .ssh/ -- if you want to use git with SSH
++ .gitconfig -- for setting git configurations for your user
++ .bash_profile -- for setting custom ENV variables for your container
++ .bash_alias -- for setting additional custom aliases for your container

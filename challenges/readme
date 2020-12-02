@@ -1,0 +1,5 @@
+Challenges folder
+-----------------
+This folder is where all your challenges/assignments will live.
+
+When the container launches, this will become your working directory automatically when launching a terminal.
