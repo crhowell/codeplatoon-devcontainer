@@ -5,6 +5,8 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"runServices": ["db", "devtools"],
 	"service": "devtools",
+	"containerUser": "dev",
+	"initializeCommand": "mkdir -p challenges home/dev",
 	"workspaceFolder": "/challenges",
 	"shutdownAction": "stopCompose",
 	// Set *default* container specific settings.json values on container create.
@@ -55,14 +57,5 @@
 		// "batisteo.vscode-django",
 		// "wholroyd.jinja",
 		// "coenraads.bracket-pair-colorizer",
-	],
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [3000, 8000],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip3 install -r requirements.txt",
-
-	// Comment out to connect as root instead.
-	"remoteUser": "dev"
+	]
 }
