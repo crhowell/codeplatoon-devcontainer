@@ -1,5 +1,3 @@
-// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.134.0/containers/python-3
 {
 	"name": "CodePlatoon Devtools",
 	"dockerComposeFile": "docker-compose.yml",
@@ -7,8 +5,8 @@
 	"service": "devtools",
 	"workspaceFolder": "/challenges",
 	"shutdownAction": "stopCompose",
-	// Set *default* container specific settings.json values on container create.
 	"settings": {
+		// Custom container presets for VSCode settings.
 		"editor.fontSize": 14,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderLineHighlight": "gutter",
@@ -22,7 +20,6 @@
     "workbench.colorTheme": "Visual Studio Dark",
 		"workbench.startupEditor": "newUntitledFile",
 		"editor.suggestSelection": "first",
-		"python.languageServer": "Pylance",
 		
     "[python]": {
       "editor.insertSpaces": true,
@@ -34,23 +31,27 @@
 		"terminal.integrated.shellArgs.linux": ["-l"],
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.linting.enabled": true,
-		"python.linting.flake8Enabled": true,
+		"python.linting.pep8Enabled": true,
+		"python.linting.pylintEnabled": true,
 		"python.formatting.provider": "autopep8",
 		"python.formatting.autopep8Path": "~/.local/bin/autopep8",
+		"python.linting.pylintPath": "~/.local/bin/pylint"
+		//// Alternative Linters/Formatters we could use
 		// "python.formatting.blackPath": "~/.local/bin/black",
 		// "python.formatting.yapfPath": "~/.local/bin/yapf",
 		// "python.linting.banditPath": "~/.local/bin/bandit",
-		"python.linting.flake8Path": "~/.local/bin/flake8"
+		// "python.linting.flake8Path": "~/.local/bin/flake8"
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"hookyqr.beautify",
 		"ms-python.python",
-		"ms-python.vscode-pylance",
 		"vscode-icons-team.vscode-icons",
+		"christian-kohler.path-intellisense",
+		"hookyqr.beautify",
+		"coenraads.bracket-pair-colorizer"
 		// We can add more defaults to install here...
-		// "christian-kohler.path-intellisense",
+		
 		// "searking.preview-vscode",
 		// "hasanali.gitignore-templates",
 		// "batisteo.vscode-django",

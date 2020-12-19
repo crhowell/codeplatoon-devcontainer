@@ -9,9 +9,7 @@ services:
     networks:
       - cp_net
     ports:
-      - "3000:3000"
       - "5990-5999:5990-5999"
-      - "8000:8000"
     volumes:
       - "../challenges:/challenges"      
       - "../home/dev:/home/dev"
@@ -22,21 +20,21 @@ services:
       resources:
         limits:
           cpus: '1.0'
-          memory: 1G
+          memory: 650M
         reservations:
-          cpus: '0.50'
-          memory: 750M
+          cpus: '1.0'
+          memory: 500M
   db:
     container_name: postgres
     image: postgres
     deploy:
       resources:
         limits:
-          cpus: '1.0'
-          memory: 750M
+          cpus: '0.75'
+          memory: 300M
         reservations:
           cpus: '0.50'
-          memory: 512M
+          memory: 250M
     ports:
       - "5432"
     networks:
