@@ -9,7 +9,7 @@ services:
     networks:
       - cp_net
     ports:
-      - "5990-5999:5990-5999"
+      - "5990:5990"
     volumes:
       - "../challenges:/challenges"      
       - "../home/dev:/home/dev"
@@ -19,8 +19,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1.0'
-          memory: 650M
+          cpus: '1.25'
+          memory: 750M
         reservations:
           cpus: '1.0'
           memory: 500M
@@ -30,10 +30,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.75'
+          cpus: '0.50'
           memory: 300M
         reservations:
-          cpus: '0.50'
+          cpus: '0.25'
           memory: 250M
     ports:
       - "5432"

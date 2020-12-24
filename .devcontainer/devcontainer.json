@@ -1,4 +1,5 @@
 {
+	// Dev Container Settings
 	"name": "CodePlatoon Devtools",
 	"dockerComposeFile": "docker-compose.yml",
 	"runServices": ["db", "devtools"],
@@ -6,7 +7,7 @@
 	"workspaceFolder": "/challenges",
 	"shutdownAction": "stopCompose",
 	"settings": {
-		// Custom container presets for VSCode settings.
+		// VSCode presets to be used when VSCode opens the container.
 		"editor.fontSize": 14,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderLineHighlight": "gutter",
@@ -19,14 +20,16 @@
     "window.zoomLevel": 2,
     "workbench.colorTheme": "Visual Studio Dark",
 		"workbench.startupEditor": "newUntitledFile",
+		"workbench.iconTheme": "vscode-icons",
 		"editor.suggestSelection": "first",
-		
+		// VSCode language specific settings.
     "[python]": {
       "editor.insertSpaces": true,
       "editor.tabSize": 4,
 			"editor.detectIndentation": false,
 			"editor.rulers": [72, 79]
 		},
+		
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"terminal.integrated.shellArgs.linux": ["-l"],
 		"python.pythonPath": "/usr/local/bin/python",
@@ -36,26 +39,22 @@
 		"python.formatting.provider": "autopep8",
 		"python.formatting.autopep8Path": "~/.local/bin/autopep8",
 		"python.linting.pylintPath": "~/.local/bin/pylint"
-		//// Alternative Linters/Formatters we could use
+		// Alternative Linters/Formatters we could use
 		// "python.formatting.blackPath": "~/.local/bin/black",
 		// "python.formatting.yapfPath": "~/.local/bin/yapf",
 		// "python.linting.banditPath": "~/.local/bin/bandit",
 		// "python.linting.flake8Path": "~/.local/bin/flake8"
 	},
 
-	// Add the IDs of extensions you want installed when the container is created.
+	// VSCode Extensions (by ID) to install when VSCode opens container.
+	// NOTE: Only available within the container, installs on initial launch.
 	"extensions": [
 		"ms-python.python",
 		"vscode-icons-team.vscode-icons",
 		"christian-kohler.path-intellisense",
 		"hookyqr.beautify",
-		"coenraads.bracket-pair-colorizer"
-		// We can add more defaults to install here...
-		
-		// "searking.preview-vscode",
-		// "hasanali.gitignore-templates",
-		// "batisteo.vscode-django",
-		// "wholroyd.jinja",
-		// "coenraads.bracket-pair-colorizer",
+		"coenraads.bracket-pair-colorizer",
+		"hasanali.gitignore-templates",
+		"wholroyd.jinja"
 	]
 }
