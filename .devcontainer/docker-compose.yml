@@ -16,25 +16,9 @@ services:
     environment:
       - PGHOST=postgres
       - PGPASSFILE=/home/db/dev/.pgpass
-    deploy:
-      resources:
-        limits:
-          cpus: '1.25'
-          memory: 750M
-        reservations:
-          cpus: '1.0'
-          memory: 500M
   db:
     container_name: postgres
     image: postgres
-    deploy:
-      resources:
-        limits:
-          cpus: '0.50'
-          memory: 300M
-        reservations:
-          cpus: '0.25'
-          memory: 250M
     ports:
       - "5432"
     networks:
